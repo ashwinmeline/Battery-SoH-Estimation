@@ -9,16 +9,18 @@ The focus is on robust Signal Processing and Feature Engineering to predict capa
 
 Key Technical Achievements
 
-Methodology & Physics Data Source: NASA Ames Prognostics Center of Excellence (PCoE) Battery Aging Dataset (B0005).
+Methodology
 
-Physics-Based Feature: The Time-to-3.5V feature was selected because it represents the "Discharge Voltage Plateau." 
-As the internal resistance of a Li-ion cell increases (Aging), the voltage drops faster under load, making the discharge duration to a fixed threshold a highly linear proxy for capacity loss.
+Data Source: NASA Ames Prognostics Center of Excellence (PCoE) Battery Aging Dataset (B0005).
 
 Preprocessing: Implemented MATLAB-to-Python flattening, handling inconsistent indexing across different NASA battery IDs (B0005, B0006).
 
-ML Performance: Achieved an R^2 score of 0.9968 and a Mean Absolute Error (MAE) of 0.0086 Ah using a Linear Regression baseline.
-
 Feature Engineering: Extracted "Time-to-3.5V" from raw discharge telemetry as a primary health indicator.
+
+-->Physics-Based Feature: The 'Time-to-3.5V' feature was selected because it represents the "Discharge Voltage Plateau." 
+As the internal resistance of a Li-ion cell increases (Aging), the voltage drops faster under load, making the discharge duration to a fixed threshold a highly linear proxy for capacity loss. 
+
+ML Performance: Achieved an R^2 score of 0.9968 and a Mean Absolute Error (MAE) of 0.0086 Ah using a Linear Regression baseline.
 
 Modular Data Pipeline: Authored a standalone data_loader.py to handle nested MATLAB structures and inconsistent field naming.
 
